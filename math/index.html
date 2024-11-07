@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Calculator</title>
+    <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  </head>
+   <body>
+      <div class="num">
+     <button id="button1" onclick="insertText1()" class="btn">1</button>
+     <button id="button2" onclick="insertText2()" class="btn">2</button>
+     <button id="button3" onclick="insertText3()" class="btn">3</button>
+     <button id="buttonp" onclick="insertTextp()" class="btn">＋</button>
+         <button id="bs"onclick="back()" class="btn">⇐</button>
+     <div class="down">
+     <button id="button4"onclick="insertText4()" class="btn">4</button>
+     <button id="button5"onclick="insertText5()"class="btn">5</button>
+     <button id="button6"onclick="insertText6()"class="btn">6</button>
+     <button id="button-"onclick="insertTextm()"class="btn">ー</button>
+       <button id="buttonnm"onclick="nomuch()" class="btn">NM</button>
+   </div>
+   <button id="button7"onclick="insertText7()"class="btn">7</button>
+   <button id="button8"onclick="insertText8()"class="btn">8</button>
+   <button id="button9"onclick="insertText9()"class="btn">9</button>
+   <button id="button:"onclick="insertTextk()"class="btn">✕</button>
+        <button id="buttonclear"onclick="ac()" class="btn">AC</button>
+     <div class="down">
+   <button id="button00"onclick="insertText00()"class="btn">00</button>
+   <button id="button0"onclick="insertText0()"class="btn">0</button>
+   <button id="button."onclick="insertTextin()"class="btn">.</button>
+   <button id="button/"onclick="insertTextsl()"class="btn">÷</button>
+   <button id="button="class="btn"onclick="calculate()">=</button>
+     </div>
+      </div>
+     <textarea id="myTextarea"></textarea>
+      <div class="red-text" id="result"></div>     
+   </body>
+  <script>
+  function insertText1() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "1";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+     function insertText2() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "2";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText3() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "3";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertTextp() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "+";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+function insertText4() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "4";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText5() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "5";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText6() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "6";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertTextm() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "-";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText7() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "7";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText8() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "8";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText9() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "9";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertTextk() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "*";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText00() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "00";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertText0() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "0";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertTextin() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = ".";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function insertTextsl() {
+  var textarea = document.getElementById("myTextarea");
+  var textToInsert = "/";
+  var cursorPosition = textarea.selectionStart;
+  var textareaValue = textarea.value;
+  var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+}
+    function nomuch() {
+      var textarea = document.getElementById("myTextarea");
+      var textToInsert = "%";
+      var cursorPosition = textarea.selectionStart;
+      var textareaValue = textarea.value;
+     var textBeforeCursorPosition = textareaValue.substring(0, cursorPosition);
+  var textAfterCursorPosition = textareaValue.substring(cursorPosition, textareaValue.length);
+  textarea.value = textBeforeCursorPosition + textToInsert + textAfterCursorPosition;
+    }
+    function calculate() {
+  var textarea = document.getElementById("myTextarea");
+  var expression = textarea.value;
+  var result = eval(expression);
+  var resultElement = document.getElementById("result");
+    resultElement.textContent = `${result}`;
+    }
+    function ac(){
+      Textarea = document.getElementById("myTextarea");
+      Textarea.value = "";
+      var cleardiv = document.getElementById("result");
+      cleardiv.textContent = "";
+    }
+    function back(){
+      var textarea = document.getElementById("myTextarea");
+      const currentValue = textarea.value;
+
+      if (currentValue.length > 0) {
+        const newValue = currentValue.slice(0, -1);
+        textarea.value = newValue;
+      }
+    }
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "1") {
+        var button = document.getElementById("button1");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "2") {
+        var button = document.getElementById("button2");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "3") {
+        var button = document.getElementById("button3");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === ";") {
+        var button = document.getElementById("buttonp");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "4") {
+        var button = document.getElementById("button4");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "5") {
+        var button = document.getElementById("button5");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "6") {
+        var button = document.getElementById("button6");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "-") {
+        var button = document.getElementById("button-");
+        button.click();
+    }
+});
+   document.addEventListener("keydown", function(event) {
+    if (event.key === "@") {
+        var button = document.getElementById("buttonnm");
+        button.click();
+    }
+}); 
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "7") {
+        var button = document.getElementById("button7");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "8") {
+        var button = document.getElementById("button8");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "9") {
+        var button = document.getElementById("button9");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === ":") {
+        var button = document.getElementById("button:");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "C") {
+        var button = document.getElementById("buttonclear");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "#") {
+        var button = document.getElementById("button00");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "0") {
+        var button = document.getElementById("button0");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === ".") {
+        var button = document.getElementById("button.");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "/") {
+        var button = document.getElementById("button/");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === "=") {
+        var button = document.getElementById("button=");
+        button.click();
+    }
+});
+    document.addEventListener("keydown", function(event) {
+    if (event.key === ",") {
+        var button = document.getElementById("bs");
+        button.click();
+    }
+});
+    
+    
+  </script>    
+
+  <style>  
+    body .down {
+       margin: 3px; 
+   }  
+  </style>
+</html>
