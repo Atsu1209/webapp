@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <audio id="audio" src="play.mp3"></audio>
+  </head>
+  
+  <body class="">
+    <div class="container">
+      <h2 class="yellow-text">残り<span id="hour" class="yellow-text">時間</span><span class="yellow-text" id="min">分</span><span id="sec" class="yellow-text">秒</span></h2>
+      <div id="time">yeah</div>
+      <form id="timerForm">
+        <label for="hours">時間：</label>
+        <input type="number" id="hours" min="0" step="1" placeholder="0">
+        <label for="minutes">分：</label>
+        <input type="number" id="minutes" min="0" step="1" placeholder="0">
+        <label for="seconds">秒：</label>
+        <input type="number" id="seconds" min="0" step="1" placeholder="0">
+        <button type="submit" class="btn waves-effect waves-light">タイマーをセット</button>
+      </form>
+        <button onclick="stopaudio()" class="btn">アラームを止める</button>
+       
+      </div>
+      <h3 style="padding-left: 200px;" class="red-text">アラーム音がうるさいので音量注意!</h3>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+      // フォーム送信時の処理
+      $("#timerForm").submit(function (event) {
+        event.preventDefault();
+        var hours = parseInt($("#hours").val()) || 0;
+        var minutes = parseInt($("#minutes").val()) || 0;
+        var seconds = parseInt($("#seconds").val()) || 0;
+        var totalTime = hours * 3600 + minutes * 60 + seconds;
+        startTimer(totalTime);
+      });
+
+      function startTimer(time) {
+        let c = time;
+        setInterval(() => {
+          document.getElementById("time").textContent = new Date().toLocaleString();
+        }, 1);
+        
+        var count = setInterval(() => {
+          var hour = $("#hour").text(Math.floor(c / 3600) + "時間");
+          var min = $("#min").text(Math.floor((c % 3600) / 60) + "分");
+          var sec = $("#sec").text(Math.floor(c % 60) + "秒");
+          c = c - 1;
+          
+          if (c <= 0) {
+            document.getElementById("audio").play();
+            clearInterval(count);
+            $("#sec").text("0秒");
+          }
+        }, 1000);
+      }
+        
+        function stopaudio(){
+            document.getElementById("audio").pause();
+        }
+        
+        
+    </script>
+  </body>
+</html>
