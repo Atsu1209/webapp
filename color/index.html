@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 16px;
+    margin: 0;
+}
+
+button {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <label for="colorPicker">色を選択してください：</label>
+    <input type="color" id="colorPicker" value="#000000"> <!-- デフォルトで黒色を表示 -->
+
+    <p id="colorCode">選択された色のカラーコード：#000000</p>
+
+    <button id="copyButton">カラーコードをコピー</button>
+    <div class="coms green-text"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        document.getElementById('colorPicker').addEventListener('input', function(event) {
+            var selectedColor = event.target.value;
+            document.getElementById('colorCode').textContent = '選択された色のカラーコード：' + selectedColor;
+        });
+
+        document.getElementById('copyButton').addEventListener('click', function() {
+            var colorCode = document.getElementById('colorCode').textContent.split('：')[1]; // カラーコードの部分を取得
+            copyToClipboard(colorCode);
+            $(".coms").html("コピーしました!")
+        });
+
+        function copyToClipboard(text) {
+            var dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+        }
+    </script>
+
+</body>
+</html>
