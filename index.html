@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ブログ</title>
+    </head>
+    <style>
+        .foot{
+            background-color: #2f5167;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #2f5167;
+            color: #fff;
+            height: 80px;
+            padding: 40px;
+        }
+
+        .margin{
+            margin-bottom: 10px;
+        }
+        
+        header {
+            background-color: white;
+            color: black;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            list-style: none; 
+            padding: 0;
+            width: 100%;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .main-nav li {
+            margin: 0 20px; 
+            text-align: center; 
+        }
+
+        .top h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 1;
+            font-size: 100px;
+            margin-top: 5px;
+            background-image: linear-gradient(45deg, #007bff, #00ffff); 
+            background-clip: text;
+            -webkit-background-clip: text; 
+            color: transparent;
+            animation: textGradientAnimation 5s infinite; 
+        }
+
+        .top {
+            position: relative;
+            text-align: center;
+        }
+
+        .top-img {
+            width: 100%;
+            height: auto;
+            z-index: 0;
+        }
+
+        .about {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 70px;
+        }
+
+        .bar {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .card h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .card h4 {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .card a:hover {
+            color: #0056b3;
+        }
+
+        .blog {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .about, .blog {
+            opacity: 0; 
+            transform: translateY(100px); 
+            transition: opacity 0.5s, transform 0.5s; 
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+<body>
+    <header>
+        <h5>Atsu1209-Blog</h5>
+        <h3>Atsu1209</h3>
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://atsu1209.github.io/home/index.html">Home</a>
+                </li>    
+            </ul>
+        </nav>
+    </header>
+    <div class="top">
+        <h1>Atsu1209</h1>
+        <img class="top-img" src="img/back.png">
+    </div>
+    <div class="about">
+        <div class="bar">
+            <h2>About</h2>
+        </div>
+        <h2>Atsu1209の制作物</h2>
+        <h2 class="margin">見て</h2>
+    </div>
+    <div class="blog">
+        <div class="bar">
+            <h2>制作物</h2>
+        </div>
+          <div class="card">
+            <h1 class="blog-title"><span style="color: red;">New!</span>  答えが全然違う電卓(?)</h1>
+            <a href="https://atsu1209.github.io/shit-dentaku">詳しく見る>></a>
+        </div>  
+        <div class="card">
+            <h1 class="blog-title">電卓</h1>
+            <a href="https://atsu1209.github.io/webapp/math">詳しく見る>></a>
+        </div> 
+          <div class="card">
+            <h1 class="blog-title">タイマー</h1>
+            <a href="https://atsu1209.github.io/webapp/timer">詳しく見る>></a>
+        </div> 
+        <div class="card">
+            <h1 class="blog-title">カラーコード生成</h1>
+            <a href="https://atsu1209.github.io/webapp/color">詳しく見る>></a>
+        </div> 
+
+    </div>
+    <div class="footer">
+        <footer class="foot">
+            <address>Copyright(C)2023-Atsu1209 All Rights Reserved.</address>
+            <p>Atsu1209-HomePage/Japan</p>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            var element = $(".about");
+            var scrollPosition = $(window).scrollTop() + $(window).height();
+            var elementPosition = element.offset().top;
+            if (scrollPosition > elementPosition) {
+                element.css({
+                    "opacity": "1", 
+                    "transform": "translateY(0)" 
+                });
+            }
+            if (scrollPosition < elementPosition) {
+                element.css({
+                    "opacity": "0", 
+                    "transform": "translateY(100px)" 
+                });
+            }
+        });
+
+        $(window).scroll(function() {
+            var element = $(".blog");
+            var scrollPosition = $(window).scrollTop() + $(window).height();
+            var elementPosition = element.offset().top;
+            if (scrollPosition > elementPosition) {
+                element.css({
+                    "opacity": "1", 
+                    "transform": "translateY(0)" 
+                });
+            }
+            if (scrollPosition < elementPosition) {
+                element.css({
+                    "opacity": "0", 
+                    "transform": "translateY(100px)" 
+                });
+            }
+        });
+
+        $(document).ready(function() {
+            if ($(window).width() < 768) {
+                $(window).off('scroll');
+            }
+        });
+
+        var userAgent = navigator.userAgent;
+        var targetBrowser = "Chrome";
+        if (userAgent.indexOf(targetBrowser) === -1) {
+            alert("Chrome以外のブラウザで開くと \n 正しく動作しない場合があります")
+        }
+    </script>
+</body>
+</html>
